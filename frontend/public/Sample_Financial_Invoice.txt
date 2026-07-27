@@ -1,0 +1,28 @@
+==================================================
+            POCKET C.A. SAMPLE FINANCIAL INVOICE
+==================================================
+Invoice Number : INV-2026-0042
+Invoice Date   : 26-July-2026
+Client Name    : Apex Global Enterprises Ltd.
+Client GSTIN   : 27ABCDE1234F1Z5
+Vendor GSTIN   : 27XYZAB9876C1Z1
+
+SUMMARY OF SERVICES & LINE ITEMS:
+--------------------------------------------------
+1. Quarterly Financial Auditing Services : Rs 45,000.00
+2. GSTR-1 & GSTR-3B Tax Filing Fee       : Rs 15,000.00
+3. TDS Tax Advisory (Section 194J)       : Rs 10,000.00
+--------------------------------------------------
+Subtotal Amount                         : Rs 70,000.00
+CGST @ 9%                               : Rs  6,300.00
+SGST @ 9%                               : Rs  6,300.00
+Total GST Payable (18%)                 : Rs 12,600.00
+--------------------------------------------------
+Gross Invoice Total Amount              : Rs 82,600.00
+Less: TDS Deducted under Sec 194J (10%) : Rs  7,000.00
+--------------------------------------------------
+NET PAYABLE AMOUNT                      : Rs 75,600.00
+==================================================
+Payment Terms: Payable within 15 days via NEFT/RTGS
+Bank Name    : HDFC Bank (A/C: 50200012345678, IFSC: HDFC0000123)
+==================================================

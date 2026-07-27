@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --canvas: #F5F8FC;
+    --surface: #FFFFFF;
+    --sidebar: #F7F9FD;
+    --border-color: #E2E8F0;
+    --card-bg: #FFFFFF;
+    --ink-default: #0F172A;
+    --ink-muted: #475569;
+    --ink-faint: #94A3B8;
+    
+    --chip-rose: #FEE2E7;
+    --chip-amber: #FEF3C7;
+    --chip-mint: #D9F7EE;
+    --chip-violet: #EDE4FE;
+    --chip-sky: #DCEBFF;
+
+    --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.04);
+    --shadow-floating: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+  }
+
+  .dark {
+    --canvas: #0B0F19;
+    --surface: #111827;
+    --sidebar: #0D1322;
+    --border-color: #1E293B;
+    --card-bg: #151D2F;
+    --ink-default: #F8FAFC;
+    --ink-muted: #94A3B8;
+    --ink-faint: #64748B;
+
+    --chip-rose: rgba(244, 63, 94, 0.15);
+    --chip-amber: rgba(245, 158, 11, 0.15);
+    --chip-mint: rgba(16, 185, 129, 0.15);
+    --chip-violet: rgba(139, 92, 246, 0.15);
+    --chip-sky: rgba(59, 130, 246, 0.15);
+
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+    --shadow-floating: 0 10px 30px -5px rgba(0, 0, 0, 0.4);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-canvas text-ink font-sans antialiased transition-colors duration-200;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: rgba(47, 111, 237, 0.25);
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: rgba(148, 163, 184, 0.3);
+    border-radius: 999px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(148, 163, 184, 0.5);
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* Markdown content inside chat bubbles */
+.prose-chat {
+  line-height: 1.65;
+}
+.prose-chat h3 {
+  @apply text-[15px] font-semibold mb-2 mt-2 text-ink;
+}
+.prose-chat p {
+  @apply mb-2.5;
+}
+.prose-chat p:last-child {
+  @apply mb-0;
+}
+.prose-chat strong {
+  @apply font-semibold text-ink;
+}
+.prose-chat ul {
+  @apply list-disc pl-5 mb-2.5 space-y-1;
+}
+.prose-chat ol {
+  @apply list-decimal pl-5 mb-2.5 space-y-1;
+}
+.prose-chat table {
+  @apply w-full text-sm border-collapse my-3 rounded-lg overflow-hidden border border-border;
+}
+.prose-chat th,
+.prose-chat td {
+  @apply border border-border px-3 py-2 text-left;
+}
+.prose-chat th {
+  @apply bg-sidebar font-semibold text-ink;
+}
+.prose-chat code {
+  @apply bg-sidebar text-[13px] px-1.5 py-0.5 rounded border border-border text-brand-blue dark:text-teal-400 font-mono;
+}
+.prose-chat pre {
+  @apply bg-[#0F172A] text-[#E2E8F0] rounded-xl p-4 overflow-x-auto mb-3 text-[13px] border border-border;
+}
+.prose-chat pre code {
+  @apply bg-transparent p-0 border-none text-inherit;
+}
