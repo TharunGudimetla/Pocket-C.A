@@ -471,6 +471,18 @@ export async function generateReply(
     return { content: OFF_TOPIC_REPLY, isOnTopic: false };
   }
 
+  if (shouldUseGemini()) {
+    try {
+      const content = await generateGeminiReply(question, history, isFirstMessage);
+      return { content, isOnTopic: true };
+    } catch (error) {
+      logger.warn(
+        'Gemini request failed; using local RAG reply',
+        error instanceof Error ? error.message : error
+      );
+    }
+  }
+
   // Run RAG Engine Pipeline: Document Retrieval -> Context Injection -> LLM Answer
   const ragResult = await ragService.generateRagResponse(question, history);
 
