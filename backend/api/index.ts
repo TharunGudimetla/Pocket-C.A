@@ -1,10 +1,11 @@
+import { Request, Response } from 'express';
 import { createApp } from '../src/app';
 import { connectDatabase } from '../src/database/connect';
 
 const app = createApp();
 const databaseReady = connectDatabase();
 
-export default async function handler(req: any, res: any): Promise<void> {
+export default async function handler(req: Request, res: Response): Promise<void> {
   try {
     await databaseReady;
     app(req, res);
