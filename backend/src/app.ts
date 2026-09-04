@@ -34,6 +34,10 @@ export function createApp(): Application {
   app.use(express.urlencoded({ extended: true }));
   app.use(morgan(isProduction ? 'combined' : 'dev'));
 
+  app.get('/', (_req, res) => {
+    res.status(200).json({ success: true, message: 'API is running' });
+  });
+
   app.use('/api', routes);
 
   app.use(notFoundHandler);
